@@ -1,0 +1,35 @@
+<?php
+    namespace App\Http\Controllers;
+
+    use App\Http\Requests\{{modelName}}Request;
+    use App\{{modelName}};
+
+    class {{modelName}}Controller extends Controller
+    {
+        public function index()
+        {
+            ${{modelName}} = {{modelName}}::latest()->get();
+            return response()->json(${{modelName}});
+        }
+        public function store(Request $request)
+        {
+            ${{modelName}} = {{modelName}}::create($request->all());
+            return response()->json(${{modelName}}, 201);
+        }
+        public function show($id)
+        {
+            ${{modelName}} = {{modelName}}::findOrFail($id);
+            return response()->json(${{modelName}});
+        }
+        public function update(Request $request, $id)
+        {
+            ${{modelName}} = {{modelName}}::findOrFail($id);
+            ${{modelName}}->update($request->all());
+            return response()->json(${{modelName}}, 200);
+        }
+        public function destroy($id)
+        {
+            {{modelName}}::destroy($id);
+            return response()->json(null, 204);
+        }
+    }
