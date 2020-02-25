@@ -39,24 +39,24 @@ Controller.stub
     {
         public function index()
         {
-            ${{modelNamePluralLowerCase}} = {{modelName}}::latest()->get();
-            return response()->json(${{modelNamePluralLowerCase}});
+            ${{modelName}} = {{modelName}}::latest()->get();
+            return response()->json(${{modelName}});
         }
-        public function store({{modelName}}Request $request)
+        public function store(Request $request)
         {
-            ${{modelNameSingularLowerCase}} = {{modelName}}::create($request->all());
-            return response()->json(${{modelNameSingularLowerCase}}, 201);
+            ${{modelName}} = {{modelName}}::create($request->all());
+            return response()->json(${{modelName}}, 201);
         }
         public function show($id)
         {
-            ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
-            return response()->json(${{modelNameSingularLowerCase}});
+            ${{modelName}} = {{modelName}}::findOrFail($id);
+            return response()->json(${{modelName}});
         }
-        public function update({{modelName}}Request $request, $id)
+        public function update(Request $request, $id)
         {
-            ${{modelNameSingularLowerCase}} = {{modelName}}::findOrFail($id);
-            ${{modelNameSingularLowerCase}}->update($request->all());
-            return response()->json(${{modelNameSingularLowerCase}}, 200);
+            ${{modelName}} = {{modelName}}::findOrFail($id);
+            ${{modelName}}->update($request->all());
+            return response()->json(${{modelName}}, 200);
         }
         public function destroy($id)
         {
@@ -64,6 +64,7 @@ Controller.stub
             return response()->json(null, 204);
         }
     }
+
 Model.stub
 <?php
     namespace App;
