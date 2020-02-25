@@ -1,14 +1,14 @@
 # CRUD_Generator
 CRUD Geneator operation
-#Step 1 — creating the project
+# Step 1 — creating the project
 Create a new Laravel project:
 
 composer create-project laravel/laravel Contest
 
-Step 2 — setup
+# Step 2 — setup
 Connect your laravel application to a database and start the server.
 
-Step 3 — command creation
+# Step 3 — command creation
 Here is where we start working on the artisan command for the CRUD generator.
 
 Create a CRUD generator command: php artisan make:command CrudGenerator
@@ -21,12 +21,12 @@ Of course the command is not setup yet and that’s why you see a default name a
 
 Before we work on the command, we need some stubs or blueprints if you prefer.
 
-Step 4 — stubs
+# Step 4 — stubs
 Copy the following stubs inside resources/stubs.
 
 The stubs directory does not exist, so make sure you create it. Also, name the files with the headers below. Controller.stub, Model.stub and Request.stub.
 
-Step 5 — working on the generator
+# Step 5 — working on the generator
 Let’s now work on the artisan console command that we created in step 3.
 
 Open CrudGenerator.php. You can find the file inside app/Console/Commands.
@@ -57,7 +57,7 @@ The same thing happens for controller and request. Thus, I will just paste the c
 
 Obviously we need to get the input that the user passed using the command, which in our case it will always be Car, we call the functions we explained above and at the end we create a route resource and we append it to the api.php file.
 
-Step 6 — running the command
+# Step 6 — running the command
 Let’s give it a try now that we have everything setup.
 
 Open a terminal and run:
